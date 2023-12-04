@@ -45,7 +45,7 @@ const Navbar = () => {
         changeHeader ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
-      <nav className="flex items-center justify-between max-w-screen-xl mx-auto px-6 py-3">
+      <nav className="flex items-center justify-between max-w-screen-xl mx-auto px-8 py-3">
         {/* Left Section */}
         <div className="flex items-center">
           <img
@@ -78,15 +78,17 @@ const Navbar = () => {
         {/* Right Section */}
         {user?.displayName ? (
           <div className="flex items-center justify-end space-x-4">
-            <div
-              className="relative flex cursor-pointer"
-              onClick={() => navigate('/orders')}
-            >
-              <span className="bg-primary w-6 h-6 rounded-full flex items-center justify-center text-white poppins absolute -right-2 -top-2">
-                {order.length}
-              </span>
-              <BsCart2 className="cursor-pointer w-6 h-6 text-gray-700 mx-2" />
-            </div>
+            {user.role !== 'admin' && (
+              <div
+                className="relative flex cursor-pointer"
+                onClick={() => navigate('/orders')}
+              >
+                <span className="bg-primary w-6 h-6 rounded-full flex items-center justify-center text-white poppins absolute -right-2 -top-2">
+                  {order.length}
+                </span>
+                <BsCart2 className="cursor-pointer w-6 h-6 text-gray-700 mx-2" />
+              </div>
+            )}
             <div style={{ fontSize: '1.5em' }}>
               <FaUserAlt />
             </div>

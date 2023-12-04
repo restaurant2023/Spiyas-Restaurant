@@ -1,13 +1,13 @@
 import AddFood from './AddFoodForm';
 import SideNav from './SideNav';
-import bg from '../assets/bannerbackground.png';
+import bg from '../assets/bg-admin.png';
 import EditFood from './EditFoodForm';
-import AdminDashboard from './AdminDashboard';
+import AdminDashboard from './FoodList';
 import { useState } from 'react';
 
 const Admin = () => {
   //   const { user } = useAuth();
-  const [currentTab, setCurrentTab] = useState<string>('dashboard');
+  const [currentTab, setCurrentTab] = useState<string>('foodlist');
   const [editingFoodId, setEditingFoodId] = useState<string | null>(null);
 
   const handleNavClick = (tabName: string, foodId?: string) => {
@@ -21,7 +21,7 @@ const Admin = () => {
         return <AddFood />;
       case 'editfood':
         return <EditFood foodId={editingFoodId} />;
-      case 'dashboard':
+      case 'foodlist':
       default:
         return <AdminDashboard onEditFood={handleNavClick} />;
     }

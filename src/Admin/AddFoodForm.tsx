@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../utils/firebase/firebase.config';
-// import Brand from '../components/Form/Brand';
 import { MdFileUpload } from 'react-icons/md';
 
 export type FoodType = {
@@ -68,7 +67,7 @@ const AddFood: React.FC = () => {
 
   return (
     <main>
-      <div className="flex flex-col  items-end ">
+      <div className="flex flex-col  items-center  ">
         <form
           onSubmit={handleSubmit}
           className=" flex flex-col gap-3 w-full sm:w-3/4 md:w-1/2 lg:w-1/2"

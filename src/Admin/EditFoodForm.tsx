@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { firestore } from '../utils/firebase/firebase.config';
 import { FoodType } from '../types/food.types';
@@ -12,23 +12,26 @@ type EditFoodProps = {
 
 const EditFood: React.FC<EditFoodProps> = ({ foodId }) => {
   const [formData, setFormData] = useState<FoodType>({
-    id: '',
+    id: foodId || '',
     name: '',
     foodType: '',
     price: 0,
     imageUrl: '',
     description: '',
   });
-  const params = useParams<{ foodId: string }>();
+  // const params = useParams<{ foodId: string }>();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFoodData = async () => {
       if (foodId) {
         const foodRef = doc(firestore, 'foods', foodId);
+
         const docSnap = await getDoc(foodRef);
+
         if (docSnap.exists()) {
           const foodData = docSnap.data() as FoodType;
+
           setFormData({ ...foodData, id: foodId });
         } else {
           console.log('No such document!');
@@ -48,11 +51,10 @@ const EditFood: React.FC<EditFoodProps> = ({ foodId }) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (params.foodId) {
-      await updateFood(params.foodId, formData);
+    if (foodId) {
+      await updateFood(foodId, formData);
 
-      const urlFriendlyName = formData.name.replace(/\s+/g, '-').toLowerCase();
-      navigate(`/food-detail/${urlFriendlyName}`);
+      navigate(`/foods/${formData.name}`);
     } else {
       console.log('Food ID is undefined');
     }
@@ -81,7 +83,7 @@ const EditFood: React.FC<EditFoodProps> = ({ foodId }) => {
 
   return (
     <main>
-      <div className="flex flex-col items-end">
+      <div className="flex flex-col items-center">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-3 w-full md:w-1/2"

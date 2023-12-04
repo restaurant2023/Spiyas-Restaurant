@@ -123,7 +123,9 @@ const OrderHistoryScreen = () => {
             </div>
           ))
         ) : (
-          <p>No orders found.</p>
+          <p className="flex justify-center items-center text-center font-bold text-3xl text-primary">
+            No orders found
+          </p>
         )}
       </div>
     </div>

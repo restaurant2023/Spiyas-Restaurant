@@ -60,3 +60,7 @@ body::-webkit-scrollbar {
 .navBar {
   background: #27374D ;
 }
+
+.edit-icon {
+  color: #27374D;
+} 
