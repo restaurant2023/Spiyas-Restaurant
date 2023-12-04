@@ -33,7 +33,7 @@ const SideNav: React.FC<SideNavProps> = ({ onNavClick }) => {
     <div className="relative">
       {sidenav && (
         <>
-          <nav className="flex fixed flex-col w-72 navBar h-screen px-4">
+          <nav className="flex fixed flex-col w-64 navBar h-screen px-4">
             <div className="flex flex-col items-center justify-center flex-wrap mt-8 pt-12">
               <div className="">
                 {/* <img

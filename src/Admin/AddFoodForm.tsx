@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../utils/firebase/firebase.config';
 import { MdFileUpload } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 export type FoodType = {
   name: string;
@@ -19,6 +20,8 @@ const AddFood: React.FC = () => {
     imageUrl: '',
     description: '',
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -60,6 +63,7 @@ const AddFood: React.FC = () => {
         imageUrl: '',
         description: '',
       });
+      navigate(`/foods/${formData.name}`);
     } catch (error) {
       console.error('Error adding food item:', error);
     }
