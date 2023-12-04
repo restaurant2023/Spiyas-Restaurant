@@ -27,6 +27,7 @@ const SignInScreen: React.FC = () => {
   const handleSignIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setErrorMessage('');
+    console.log(user);
 
     try {
       const signInResponse = await signInWithEmailAndPassword(
