@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "./assets/Image/adult-blur-blurred-background-687824.png",
+    "icon": "./assets/ICON/Group 204.png",
+    "title": "Fast Delivery",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 2,
+    "image": "./assets/Image/chef-cook-food-33614.png",
+    "icon": "./assets/ICON/Group 1133.png",
+    "title": "A Good Auto Responder",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 3,
+    "image": "./assets/Image/architecture-building-city-2047397.png",
+    "icon": "./assets/ICON/Group 245.png",
+    "title": "Home Delivery",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
+]
