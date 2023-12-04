@@ -75,3 +75,11 @@ body::-webkit-scrollbar {
   height: 400px;
   width: 100%;
 }
+.new-color{
+  color: white;
+  background-color: #f91944!important;
+  transition: .5s;
+}
+.new-color:hover{
+  background-color: #ce193c !important;
+}

@@ -142,7 +142,7 @@ const AddFood: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="bg-primary text-white py-3 px-4 rounded hover:bg-red-600 transition duration-300"
+            className=" text-white py-3 px-4 rounded hover:bg-red-800 transition duration-300 new-color"
           >
             Add Food
           </button>

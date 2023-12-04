@@ -153,7 +153,7 @@ const EditFood: React.FC<EditFoodProps> = ({ foodId }) => {
           </button>
           <button
             type="submit"
-            className="bg-primary text-white py-3 px-4 rounded bg-primary transition duration-300"
+            className="new-color text-white py-3 px-4 rounded bg-primary transition duration-300"
           >
             Update Food
           </button>
