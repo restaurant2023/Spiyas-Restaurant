@@ -14,7 +14,7 @@ import { FirebaseError } from 'firebase/app';
 import { FcGoogle } from 'react-icons/fc';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { createUserProfileDocument } from '../api/user.firestore';
-import { UserType } from '../types/userAuth.types';
+import { useAuth } from '../context/useAuth';
 
 const SignUpScreen: React.FC = () => {
   const [name, setName] = useState('');
@@ -23,7 +23,7 @@ const SignUpScreen: React.FC = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [user, setUser] = useState<UserType | null>(null);
+  const { setUser } = useAuth();
 
   const navigate = useNavigate();
 
